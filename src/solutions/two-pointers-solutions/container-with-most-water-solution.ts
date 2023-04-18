@@ -24,3 +24,37 @@ Output: 1
  * @param {number[]} height
  * @return {number}
  */
+
+// Brute Force: O(n^2)
+
+// const maxArea = function(height) {
+//     let result = 0;
+//     for (let i = 0; i < height.length; i++) {
+//         for (let j = i + 1; j < height.length; j++) {
+//             let newResult = Math.min(height[j], height[i]) * (j - i);
+//             if (newResult > result) result = newResult;
+//         }
+//     }
+//     return result;
+// };
+
+// Two pointer solution
+
+const maxArea = function(height: number[]): number {
+    let result: number = 0;
+    let lp: number = 0;
+    let rp: number = height.length - 1;
+
+    for (let i = 0; i < height.length; i++) {
+        if (height[lp] < height[rp]) {
+            let newResult: number = height[lp] * (rp - lp);
+            result = Math.max(result, newResult);
+            lp++;
+        } else {
+            let newResult = height[rp] * (rp - lp);
+            result = Math.max(result, newResult);
+            rp--;   
+        }
+    }
+    return result;
+}
