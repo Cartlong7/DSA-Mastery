@@ -49,7 +49,6 @@ function invertTree(root) {
       stack.push(n.left, n.right);
     }
   }
-
   return root;
 }
 
@@ -64,6 +63,5 @@ function invertTree(root) {
       queue.push(n.left, n.right);
     }
   }
-
   return root;
 }
