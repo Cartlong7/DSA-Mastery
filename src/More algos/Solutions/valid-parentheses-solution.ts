@@ -28,3 +28,21 @@ Output: false
  * @param {string} s
  * @return {boolean}
  */
+const isValid = (s: Array<string>) => {
+  const stack = [];
+  const map: {[key: string]: string} = {']': '[', '}': '{', ')': '('};
+
+  for (const c of s) {
+    const isBracket = (c in map)
+    if (!isBracket) {
+      stack.push(c);
+      continue;
+    } 
+    if (stack[stack.length - 1] === map[c]) {
+      stack.pop();
+      continue;
+    }
+    return false;
+  }
+  return (stack.length === 0)
+};
