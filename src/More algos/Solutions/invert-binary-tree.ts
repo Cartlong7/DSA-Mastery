@@ -31,15 +31,21 @@ Output: [] */
  * @return {TreeNode}
  */
 
+interface TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+}
+
 // Recursion
-function invertTree(root) {
+function invertTreeRecursive(root: TreeNode | null) {
   if (root == null) return root;
-  [root.left, root.right] = [invertTree(root.right), invertTree(root.left)];
+  [root.left, root.right] = [invertTreeRecursive(root.right), invertTreeRecursive(root.left)];
   return root;
 }
 
 // DFS
-function invertTree(root) {
+function invertTreeDFS(root: TreeNode | null) {
   const stack = [root];
 
   while (stack.length) {
@@ -53,7 +59,7 @@ function invertTree(root) {
 }
 
 // BFS
-function invertTree(root) {
+function invertTreeBFS(root: TreeNode | null) {
   const queue = [root];
 
   while (queue.length) {
