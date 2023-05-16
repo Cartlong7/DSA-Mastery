@@ -34,7 +34,19 @@ Output: false
  * @return {boolean}
  */
 
-const isSameTree = (p, q) => {
+interface TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+}
+
+const TreeNode = function(this: TreeNode, val: number, left: TreeNode | null = null, right: TreeNode | null = null): void {
+  this.val = val;
+  this.left = left;
+  this.right = right;
+}
+
+const isSameTree = (p: TreeNode | null, q: TreeNode | null): boolean => {
   if (!p && !q) return true;
   if (!p || !q || p.val !== q.val) return false;
 
