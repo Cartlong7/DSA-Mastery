@@ -26,7 +26,8 @@ Input: grid = [
 Output: 3
 */
 /**
- * @param {character[][]} grid
+ * This first solution is if the grid contains numbers
+ * @param {number[][]} grid
  * @return {number}
  */
 
@@ -56,4 +57,35 @@ const exploreIsland = (r: number, c: number, grid: number[][], row: number, col:
   exploreIsland(r, c + 1, grid, row, col);
   exploreIsland(r - 1, c, grid, row, col);
   exploreIsland(r + 1, c, grid, row, col);
+}
+
+
+/**
+ * if num islands has characters of type string:
+ * @param {character[][]} grid
+ * @return {number}
+ */
+
+const numIslands2 = (grid: string[][]) => {
+  let count = 0;
+
+  for (let r = 0; r < grid.length; r++) {
+    for (let c = 0; c < grid[r].length; c++) {
+      if (grid[r][c] === '1') {
+        exploreIsland2(r, c, grid);
+        count++;
+      }
+    }
+  }
+  return count;
+};
+
+const exploreIsland2 = (r: number, c: number, grid: string[][]) => {
+  if (r < 0 || c < 0 || r >= grid.length || c >= grid[r].length || grid[r][c] === '0') return;
+
+  grid[r][c] = '0';
+  exploreIsland2(r, c - 1, grid);
+  exploreIsland2(r, c + 1, grid);
+  exploreIsland2(r - 1, c, grid);
+  exploreIsland2(r + 1, c, grid);
 }
