@@ -1,14 +1,14 @@
-# algos-in-ts ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+# DSA-Mastery ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-Welcome to the `algos-in-ts` project!
+Welcome to the `DSA-Mastery` project!
 
 ## Description
 
-This project is dedicated to solving Data Structure and Algorithm (DSA) problems daily, using TypeScript. The main objective is to maintain public accountability by regularly committing solutions to this repository.
+This project is dedicated to solving Data Structure and Algorithm (DSA) problems daily, using TypeScript, Python, and soon Java. The main objective is to maintain public accountability by regularly committing solutions to this repository.
 
 ## Motivation
 
-The motivation behind `algos-in-ts` is to improve problem-solving skills in DSA and to encourage transparency in the learning process. By solving problems daily and sharing the solutions publicly, we aim to track progress and foster a collaborative learning environment.
+The motivation behind `DSA-Mastery` is to improve problem-solving skills in DSA and to encourage transparency in the learning process. By solving problems daily and sharing the solutions publicly, we aim to track progress and foster a collaborative learning environment.
 
 ## How to Contribute
 
@@ -18,7 +18,7 @@ Contributions to this project are more than welcome! If you'd like to get involv
 2. Clone the forked repository to your local machine.
 3. Create a new branch for your contributions.
 4. Add the DSA problem to the challenges folder.
-5. Solve a DSA problem using TypeScript.
+5. Solve a DSA problem using TypeScript, or Python.
 6. Commit your solution to your branch.
 7. Push your branch to your forked repository.
 8. Create a pull request to merge your changes into the main repository.
@@ -29,7 +29,7 @@ Please ensure that your code follows the project's coding guidelines and include
 
 To maintain consistency and readability, please adhere to the following guidelines:
 
-1. Use TypeScript for all code submissions.
+1. Use TypeScript, or Python for all code submissions.
 2. Write clear and concise code with meaningful variable names.
 3. Add comments to explain your thought process when applicable.
 4. Include unit tests for your solutions to validate correctness.
@@ -37,24 +37,24 @@ To maintain consistency and readability, please adhere to the following guidelin
 
 ## Getting Started
 
-To start using the `algos-in-ts` project, follow these steps:
+To start using the `DSA-Mastery` project, follow these steps:
 
 1. Clone the repository to your local machine:
 
   ```bash
-  git clone https://github.com/your-username/algos-in-ts.git
+  git clone https://github.com/your-username/DSA-Mastery.git
   ```
 
 2. Install the required dependencies:
 
   ```bash
-  cd algos-in-ts
+  cd DSA-Mastery
   npm install
   ```
 
-3. Choose a DSA problem to solve, create a new TypeScript file (e.g., problem-name.ts) in the DSA Challenges folder, and implement your solution in the solutions folder (e.g., problem-name-solution.ts).
+3. Choose a DSA problem to solve, create a new TypeScript, or Python file (e.g., problem-name.ts, problem-name.py) in the DSA Challenges folder, and implement your solution in the solutions folder (e.g., problem-name-solution.ts).
 
-4. Test your solution:
+4. Test your solution (supported for TS only currently):
    
    ```bash
    npm test
