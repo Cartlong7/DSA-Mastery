@@ -19,19 +19,19 @@ Output: [1]
  */
 
 const topKFrequent = (nums: number[], k: number): number[] => {
-    const frequency: {[key: string]: number} = {};
-    const output = [];
+  const frequency: {[key: string]: number} = {};
+  const output = [];
 
-    for (let i = 0; i < nums.length; i++) {
-        if (frequency.hasOwnProperty(nums[i])) frequency[nums[i]] += 1;
-        else frequency[nums[i]] = 1;
-    }
-    // type is inferred here, however whether it is best practice to explicitly write the type as number[][], I'm not sure at the moment
-    const result = Object.keys(frequency).map(key => [Number(key), frequency[key]]);
-    const sortedResult = result.sort((a, b) => b[1] - a[1]);
+  for (let i = 0; i < nums.length; i++) {
+    if (frequency.hasOwnProperty(nums[i])) frequency[nums[i]] += 1;
+    else frequency[nums[i]] = 1;
+  }
+  // type is inferred here, however whether it is best practice to explicitly write the type as number[][], I'm not sure at the moment
+  const result = Object.keys(frequency).map(key => [Number(key), frequency[key]]);
+  const sortedResult = result.sort((a, b) => b[1] - a[1]);
 
-    for (let i = 0; i < k; i++) {
-      output.push(sortedResult[i][0]);
-    }
-    return output;
+  for (let i = 0; i < k; i++) {
+    output.push(sortedResult[i][0]);
+  }
+  return output;
 };

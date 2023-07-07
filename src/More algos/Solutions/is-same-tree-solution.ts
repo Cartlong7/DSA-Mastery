@@ -44,7 +44,7 @@ const TreeNode = function(this: TreeNode, val: number, left: TreeNode | null = n
   this.val = val;
   this.left = left;
   this.right = right;
-}
+};
 
 const isSameTree = (p: TreeNode | null, q: TreeNode | null): boolean => {
   if (!p && !q) return true;

@@ -57,7 +57,7 @@ const exploreIsland = (r: number, c: number, grid: number[][], row: number, col:
   exploreIsland(r, c + 1, grid, row, col);
   exploreIsland(r - 1, c, grid, row, col);
   exploreIsland(r + 1, c, grid, row, col);
-}
+};
 
 
 /**
@@ -88,4 +88,4 @@ const exploreIsland2 = (r: number, c: number, grid: string[][]) => {
   exploreIsland2(r, c + 1, grid);
   exploreIsland2(r - 1, c, grid);
   exploreIsland2(r + 1, c, grid);
-}
+};

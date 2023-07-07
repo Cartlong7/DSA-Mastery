@@ -20,14 +20,14 @@ Output: true */
  */
 
 const containsDuplicate = (nums : number[]): boolean => {
-    const cache:{[key: number]: number} = {};
-    for (let i = 0; i < nums.length; i++) {
-        let el: number = nums[i];
-        if (cache.hasOwnProperty(el)) {
-            return true;
-        } else {
-            cache[el] = el;
-        }
-    };
-    return false;
+  const cache:{[key: number]: number} = {};
+  for (let i = 0; i < nums.length; i++) {
+    const el: number = nums[i];
+    if (cache.hasOwnProperty(el)) {
+      return true;
+    } else {
+      cache[el] = el;
+    }
+  }
+  return false;
 };

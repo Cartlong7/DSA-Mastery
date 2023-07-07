@@ -21,18 +21,18 @@ Output: 9
  */
 
 const longestConsecutive = (nums: number[]): number => {
-    const set = new Set(nums);
-    let longest = 0;
+  const set = new Set(nums);
+  let longest = 0;
 
-    for (const num of nums) {
-        // check if num is the start of a sequence
-        if (!set.has(num - 1)) {
-            let length = 0;
-            while (set.has(num + length)) {
-                length += 1;
-            }
-            longest = Math.max(length, longest);
-        }
+  for (const num of nums) {
+    // check if num is the start of a sequence
+    if (!set.has(num - 1)) {
+      let length = 0;
+      while (set.has(num + length)) {
+        length += 1;
+      }
+      longest = Math.max(length, longest);
     }
-    return longest;
+  }
+  return longest;
 };

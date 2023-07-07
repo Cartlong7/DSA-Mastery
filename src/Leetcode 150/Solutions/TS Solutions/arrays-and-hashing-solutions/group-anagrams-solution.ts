@@ -23,14 +23,14 @@ Output: [["a"]]
  */
 
 const groupAnagrams = (strs: string[]): string[][] => {
-    const cache: {[key: string]: string[]} = {};
-    for (let str of strs) {
-        const letters = str.split('').sort().join('');
-        if (cache[letters]) {
-            cache[letters].push(str);
-        } else {
-            cache[letters] = [str];
-        }
+  const cache: {[key: string]: string[]} = {};
+  for (const str of strs) {
+    const letters = str.split('').sort().join('');
+    if (cache[letters]) {
+      cache[letters].push(str);
+    } else {
+      cache[letters] = [str];
     }
-    return Object.values(cache);
+  }
+  return Object.values(cache);
 };

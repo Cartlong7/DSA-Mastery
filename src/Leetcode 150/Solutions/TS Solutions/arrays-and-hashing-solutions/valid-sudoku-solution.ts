@@ -45,28 +45,28 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being m
  */
 
 const isValidSudoku = function(board: string[][]): boolean {
-    const rows: Record<number, Set<string>> = {};
-    const cols: Record<number, Set<string>> = {};
-    const squares: Record<string, Set<string>> = {};
+  const rows: Record<number, Set<string>> = {};
+  const cols: Record<number, Set<string>> = {};
+  const squares: Record<string, Set<string>> = {};
 
-    for (let r = 0; r < 9; r++) {
-        for (let c = 0; c < 9; c++) {
-            const num = board[r][c];
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      const num = board[r][c];
 
-            if (num === '.') continue;
+      if (num === '.') continue;
 
-            const grid = `${Math.floor(r / 3)}${Math.floor(c / 3)}`;
+      const grid = `${Math.floor(r / 3)}${Math.floor(c / 3)}`;
 
-            if (!cols[c]) cols[c] = new Set();
-            if (!rows[r]) rows[r] = new Set();
-            if (!squares[grid]) squares[grid] = new Set();
+      if (!cols[c]) cols[c] = new Set();
+      if (!rows[r]) rows[r] = new Set();
+      if (!squares[grid]) squares[grid] = new Set();
             
-            if (rows[r].has(num) || cols[c].has(num) || squares[grid].has(num)) return false;
+      if (rows[r].has(num) || cols[c].has(num) || squares[grid].has(num)) return false;
             
-            cols[c].add(num);
-            rows[r].add(num);
-            squares[grid].add(num);
-          }
+      cols[c].add(num);
+      rows[r].add(num);
+      squares[grid].add(num);
     }
-    return true;
+  }
+  return true;
 };

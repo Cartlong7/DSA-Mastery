@@ -27,17 +27,17 @@ Output: [0,1]
  */
 
 const twoSum = function(nums: number[], target: number): number[] {
-    const cache:{[key: number]: number} = {};
-    const result = [];
-    for (let i = 0; i < nums.length; i++) {
-        let el = nums[i];
-        let diff = target - el;
-        if (diff in cache) {
-            result.push(cache[diff], i); 
-        } else {
-            cache[el] = i;
-        }
+  const cache:{[key: number]: number} = {};
+  const result = [];
+  for (let i = 0; i < nums.length; i++) {
+    const el = nums[i];
+    const diff = target - el;
+    if (diff in cache) {
+      result.push(cache[diff], i); 
+    } else {
+      cache[el] = i;
     }
-    return result
+  }
+  return result;
 };
 

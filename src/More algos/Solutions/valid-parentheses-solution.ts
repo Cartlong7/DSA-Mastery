@@ -33,7 +33,7 @@ const isValid = (s: Array<string>) => {
   const map: {[key: string]: string} = {']': '[', '}': '{', ')': '('};
 
   for (const c of s) {
-    const isBracket = (c in map)
+    const isBracket = (c in map);
     if (!isBracket) {
       stack.push(c);
       continue;
@@ -44,5 +44,5 @@ const isValid = (s: Array<string>) => {
     }
     return false;
   }
-  return (stack.length === 0)
+  return (stack.length === 0);
 };

@@ -41,20 +41,20 @@ Output: 1
 // Two pointer solution
 
 const maxArea = function(height: number[]): number {
-    let result: number = 0;
-    let lp: number = 0;
-    let rp: number = height.length - 1;
+  let result = 0;
+  let lp = 0;
+  let rp: number = height.length - 1;
 
-    for (let i = 0; i < height.length; i++) {
-        if (height[lp] < height[rp]) {
-            let newResult: number = height[lp] * (rp - lp);
-            result = Math.max(result, newResult);
-            lp++;
-        } else {
-            let newResult = height[rp] * (rp - lp);
-            result = Math.max(result, newResult);
-            rp--;   
-        }
+  for (let i = 0; i < height.length; i++) {
+    if (height[lp] < height[rp]) {
+      const newResult: number = height[lp] * (rp - lp);
+      result = Math.max(result, newResult);
+      lp++;
+    } else {
+      const newResult = height[rp] * (rp - lp);
+      result = Math.max(result, newResult);
+      rp--;   
     }
-    return result;
-}
+  }
+  return result;
+};

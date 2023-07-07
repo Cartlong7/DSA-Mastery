@@ -33,8 +33,8 @@ Space Complexity: O(n)
 */
 
 const isPalindrome = (s: string): boolean => {
-    const newStr = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-    return (newStr.split('').reverse().join('') === newStr);
+  const newStr = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+  return (newStr.split('').reverse().join('') === newStr);
 };
 
 // THIS IS THE TWO POINTER SOLUTION

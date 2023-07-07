@@ -39,10 +39,10 @@ Output: false
  */
 
 const isSymmetric = (root: TreeNode) => {
-    const dfs = (left: TreeNode | null, right: TreeNode | null): boolean => {
-        if (!left && !right) return true;
-        if (!left || !right) return false;
-        return (left.val === right.val && dfs(left.left, right.right) && dfs(left.right, right.left));
-    }
-    return dfs(root.left, root.right);
+  const dfs = (left: TreeNode | null, right: TreeNode | null): boolean => {
+    if (!left && !right) return true;
+    if (!left || !right) return false;
+    return (left.val === right.val && dfs(left.left, right.right) && dfs(left.right, right.left));
+  };
+  return dfs(root.left, root.right);
 };

@@ -34,14 +34,14 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
  */
 
 const twoSumSorted = function(numbers: number[], target: number): number[] {
-    let left = 0;
-    let right = numbers.length - 1;
-    while (left < right) {
-        let currentSum = numbers[left] + numbers[right];
+  let left = 0;
+  let right = numbers.length - 1;
+  while (left < right) {
+    const currentSum = numbers[left] + numbers[right];
 
-        if (currentSum > target) right -= 1;
-        else if (currentSum < target) left += 1;
-        else return [left + 1, right + 1]
-    }
-    return [];
+    if (currentSum > target) right -= 1;
+    else if (currentSum < target) left += 1;
+    else return [left + 1, right + 1];
+  }
+  return [];
 };

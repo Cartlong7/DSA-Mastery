@@ -23,12 +23,12 @@ Explanation: There is no common prefix among the input strings.
  */
 
 const longestCommonPrefix = (strs: Array<string>): string => {
-    if (strs.length === 0) return '';
-    let prefix = strs[0];
-    for (const s of strs) {
-        for (let i = prefix.length - 1; i>= 0; i--) {
-            if (prefix[i] !== s[i]) prefix = prefix.slice(0, i);
-        }
+  if (strs.length === 0) return '';
+  let prefix = strs[0];
+  for (const s of strs) {
+    for (let i = prefix.length - 1; i >= 0; i--) {
+      if (prefix[i] !== s[i]) prefix = prefix.slice(0, i);
     }
-    return prefix;
+  }
+  return prefix;
 };

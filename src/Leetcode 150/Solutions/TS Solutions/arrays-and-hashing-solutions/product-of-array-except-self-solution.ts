@@ -22,17 +22,17 @@ Output: [0,0,9,0,0]
  */
 
 const productExceptSelf = (nums: number[]): number[] => {
-    const result = [];
-    let prefix = 1;
-    let postfix = 1;
+  const result = [];
+  let prefix = 1;
+  let postfix = 1;
 
-    for (let i = 0 ; i < nums.length; i++) {
-        result[i] = prefix;
-        prefix *= nums[i];
-    }
-    for (let j = nums.length - 2; j >= 0; j--) {
-        postfix *= nums[j + 1];
-        result[j] *= postfix;
-    }
-    return result;
-}
+  for (let i = 0 ; i < nums.length; i++) {
+    result[i] = prefix;
+    prefix *= nums[i];
+  }
+  for (let j = nums.length - 2; j >= 0; j--) {
+    postfix *= nums[j + 1];
+    result[j] *= postfix;
+  }
+  return result;
+};

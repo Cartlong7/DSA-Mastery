@@ -33,10 +33,10 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 const removeElement = (nums: Array<number>, val: number): number => {
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
-      if (nums[i] !== val) {
-          nums[count] = nums[i]
-          count += 1;
-      }
+    if (nums[i] !== val) {
+      nums[count] = nums[i];
+      count += 1;
+    }
   }
   return count;
 };
