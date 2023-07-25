@@ -25,3 +25,20 @@ Explanation: In this case, no transactions are done and the max profit = 0.
  * @param {number[]} prices
  * @return {number}
  */
+
+const maxProfit = function(prices: number[]): number {
+  let maxProfit = 0;
+  let l = 0;
+  let r = 1;
+
+  while (r < prices.length) {
+    if (prices[l] < prices[r]) {
+      const profit = prices[r] - prices[l];
+      maxProfit = Math.max(maxProfit, profit);
+    } else {
+      l = r;
+    } 
+    r += 1;
+  }
+  return maxProfit;
+};
