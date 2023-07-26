@@ -23,6 +23,7 @@ const containsDuplicate = (nums : number[]): boolean => {
   const cache:{[key: number]: number} = {};
   for (let i = 0; i < nums.length; i++) {
     const el: number = nums[i];
+    // eslint-disable-next-line no-prototype-builtins
     if (cache.hasOwnProperty(el)) {
       return true;
     } else {
