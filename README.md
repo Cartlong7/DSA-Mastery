@@ -40,24 +40,29 @@ To maintain consistency and readability, please adhere to the following guidelin
 To start using the `algos-in-ts` project, follow these steps:
 
 1. Clone the repository to your local machine:
+
   ```bash
   git clone https://github.com/your-username/algos-in-ts.git
   ```
 
 2. Install the required dependencies:
+
   ```bash
   cd algos-in-ts
   npm install
   ```
+
 3. Choose a DSA problem to solve, create a new TypeScript file (e.g., problem-name.ts) in the DSA Challenges folder, and implement your solution in the solutions folder (e.g., problem-name-solution.ts).
 
-4. Test your solution
+4. Test your solution:
+   
    ```bash
    npm test
    ```
-5. Commit your changes and push them to your forked repository.
+   
+6. Commit your changes and push them to your forked repository.
 
-6. Open a pull request to contribute your solution.
+7. Open a pull request to contribute your solution.
 
 ## Support
 If you have any questions or need assistance with using this project, feel free to create an issue. We're here to help!
