@@ -21,3 +21,11 @@
 # Output: true
 # Explanation: s is an empty string "" after removing non-alphanumeric characters.
 # Since an empty string reads the same forward and backward, it is a palindrome.
+
+import re
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        newS = re.sub(r"[^a-zA-Z0-9]+", "", s).lower()
+        return newS == newS[::-1]
