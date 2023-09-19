@@ -35,8 +35,8 @@ class Solution:
 
 
 # Recursive BFS Solution
-class Soluion:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+class Solution:
+    def maxDepthBFS(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
 
@@ -52,3 +52,18 @@ class Soluion:
             depth += 1
 
         return depth
+
+
+# Pre-Order Iterative DFS Solution
+class Solution:
+    def maxDepthIterative(self, root: Optional[TreeNode]) -> int:
+        stack = [[root, 1]]
+        result = 0
+        while stack:
+            node, depth = stack.pop()
+
+            if node:
+                result = max(result, depth)
+                stack.append([node.right, depth + 1])
+                stack.append([node.left, depth + 1])
+        return result
