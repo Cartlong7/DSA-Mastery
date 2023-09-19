@@ -15,6 +15,7 @@
 # Output: 2
 
 from typing import Optional
+from collections import deque
 
 
 # Definition for a binary tree node.
@@ -31,3 +32,23 @@ class Solution:
         if not root:
             return 0
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+
+# Recursive BFS Solution
+class Soluion:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        depth = 0
+        q = deque([root])
+        while q:
+            for i in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            depth += 1
+
+        return depth
