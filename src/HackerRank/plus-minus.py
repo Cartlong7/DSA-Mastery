@@ -34,3 +34,15 @@
 # Explanation
 # There are 3 positive numbers, 2 negative numbers, and 1 zero in the array.
 # The proportions of occurrence are positive: 3/6 = 0.500000, negative: 3/6 = 0.500000 and zeros: 1/6 = 0.166667
+
+
+def plusMinus(arr):
+    # Write your code here
+    total = len(arr)
+    positive = sum(1 for n in arr if n > 0)
+    negative = sum(1 for n in arr if n < 0)
+    zero = sum(1 for n in arr if n == 0)
+
+    print(round((positive / total), 6))
+    print(round((negative / total), 6))
+    print(round((zero / total), 6))
