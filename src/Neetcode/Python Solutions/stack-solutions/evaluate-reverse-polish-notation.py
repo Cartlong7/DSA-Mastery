@@ -42,7 +42,6 @@ from typing import List
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        result = 0
         for char in tokens:
             if char == "+":
                 stack.append(stack.pop() + stack.pop())
