@@ -1,7 +1,6 @@
 import unittest
 
 
-# MinStack class definition
 class MinStack:
     def __init__(self):
         self.stack = []
@@ -23,7 +22,6 @@ class MinStack:
         return self.minStack[-1]
 
 
-# MinStack Tests
 class TestMinStack(unittest.TestCase):
     def setUp(self):
         self.minStack = MinStack()
