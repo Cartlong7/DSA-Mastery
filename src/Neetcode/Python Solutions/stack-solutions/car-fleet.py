@@ -35,3 +35,19 @@
 # Explanation:
 # The cars starting at 0 (speed 4) and 2 (speed 2) become a fleet, meeting each other at 4. The fleet moves at speed 2.
 # Then, the fleet (speed 2) and the car starting at 4 (speed 1) become one fleet, meeting each other at 6. The fleet moves at speed 1 until it reaches target.
+
+from typing import List
+
+
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        pair = [[p, s] for p, s in zip(position, speed)]
+        stack = []
+
+        for p, s in sorted(pair)[
+            ::-1
+        ]:  # using python notation to sort our pair array in reverse order
+            stack.append((target - p) / s)
+            if len(stack) >= 2 and stack[-1] <= stack[-2]:
+                stack.pop()
+        return len(stack)
