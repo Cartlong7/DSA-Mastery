@@ -22,3 +22,15 @@
 # Input: n = 4
 # Output: 3
 # Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+
+
+class Solution:
+    def fib(self, n: int, memo: dict = {}) -> int:
+        if n == 0:
+            return 0
+        if n in memo:
+            return memo[n]
+        if n <= 2:
+            return 1
+        memo[n] = self.fib(n - 1, memo) + self.fib(n - 2, memo)
+        return memo[n]
