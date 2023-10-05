@@ -51,3 +51,20 @@ class Solution:
             if len(stack) >= 2 and stack[-1] <= stack[-2]:
                 stack.pop()
         return len(stack)
+
+
+# Alternative solution without a stack
+class Solution:
+    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+        pairs = [(position[i], speed[i]) for i in range(len(position))]
+        fleets = (
+            currentTime
+        ) = 0  # a car's position is always < than target at the start, so it's fine to start currentTime at 0 (no fleet will be at target at time 0)
+
+        for p, s in sorted(pairs, reverse=True):
+            arrivalTime = (target - p) / s
+            if currentTime < arrivalTime:
+                fleets += 1
+                currentTime = arrivalTime
+
+        return fleets
