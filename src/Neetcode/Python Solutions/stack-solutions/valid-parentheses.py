@@ -24,14 +24,30 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        hashmap = {"]": "[", "}": "{", ")": "("}
+        hashmap = {")": "(", "}": "{", "]": "["}
+
         for c in s:
-            bracket = c in hashmap
-            if not bracket:
+            if c not in hashmap:
                 stack.append(c)
                 continue
-            if stack[-1] == hashmap[c]:
-                stack.pop()
-                continue
-            return False
-        return len(stack) == 0
+            if not stack or stack[-1] != hashmap[c]:
+                return False
+            stack.pop()
+
+        return not stack
+
+
+# class Solution:
+#     def isValid(self, s: str) -> bool:
+#         stack = []
+#         hashmap = {"]": "[", "}": "{", ")": "("}
+#         for c in s:
+#             bracket = c in hashmap
+#             if not bracket:
+#                 stack.append(c)
+#                 continue
+#             if stack[-1] == hashmap[c]:
+#                 stack.pop()
+#                 continue
+#             return False
+#         return len(stack) == 0
