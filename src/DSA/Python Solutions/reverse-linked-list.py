@@ -39,3 +39,18 @@ class Solution:
             curr = temp
 
         return prev
+
+
+# Recursive Solution
+class Solution:
+    def reverseListRecursive(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head:
+            return None
+        newHead = head
+
+        if head.next:
+            newHead = self.reverseListRecursive(head.next)
+            head.next.next = head
+        head.next = None
+
+        return newHead
